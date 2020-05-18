@@ -4,6 +4,14 @@ OUT="aims.xyz"		# AIMS OUTPUT RES IN XYZ FORMAT
 STRIDE="5"		# STRIDE AIMS OUTPUT ... "geometry.in.next"
 TAR=$1			# TARGET AIMS OUTPUT ... USUALLY "geometry.in.next"
 
+if [ -z $TAR ]; then
+	printf "%s\n" "Error, 1st input argument (target aims output file) is empty ..."
+	exit 1
+elif [ -f $TAR ]; then
+	printf "%s\n" "Error, target aims output file does not exist ..."
+	exit 1
+fi
+
 grep "atom" $TAR > tmp
 ATOM_CNT=$( wc -l tmp  | awk '{print $1}' )
 
