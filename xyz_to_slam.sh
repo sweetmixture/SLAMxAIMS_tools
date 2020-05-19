@@ -21,11 +21,11 @@ if [ -z $SP_CATION_NAME ]; then							# CHECK LP CATION NAME
 	exit 1
 fi
 
-if [ -z $IF_SHELL ]; then							# CHECK IF SHELL IS USED
-	printf "%s\n" "MM atoms/ions are treated as rigid ion  model"
-else 
-	printf "%s\n" "MM atoms/ions are treated as core-shell model"
-fi										# END OF READ INPUT PARAMETERS
+#if [ -z $IF_SHELL ]; then							# CHECK IF SHELL IS USED
+#	printf "%s\n" "MM atoms/ions are treated as rigid ion  model"
+#else 
+#	printf "%s\n" "MM atoms/ions are treated as core-shell model"
+#fi										# END OF READ INPUT PARAMETERS
 #################################################################################
 
 ATOM_NUMBER=$( sed -n 1p $TAR_XYZ )						# READ NUMBER OF ATOMS
